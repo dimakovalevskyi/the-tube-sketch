@@ -13,7 +13,7 @@
 #define SET_SPEED 5
 
 //pins for distance sensor
-#define TRIG_PIN 7
+#define TRIG_PIN 9
 #define ECHO_PIN 8
 
 //pin for sound notifications
@@ -25,7 +25,7 @@
 #define BLUE_PIN 6
 
 //For enable working using RX/TX pins, replace for Serial1
-#define mySerial Serial
+#define mySerial Serial1
 
 //all available modes
 #define MODE_SIMPLE 0
@@ -206,7 +206,7 @@ void checkForDistance() {
 
     int time = pulseIn(ECHO_PIN, HIGH) / 58;
 
-    mySerial.println(time);
+    //mySerial.println(time);
 
     if (time <= 25) {
         needForSwitch--;
