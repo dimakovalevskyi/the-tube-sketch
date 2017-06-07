@@ -34,7 +34,7 @@
 #define MODE_COPS 3
 #define MODE_DISCO 4
 
-#define NEED_FOR_SWITCH 4
+#define NEED_FOR_SWITCH 6
 int needForSwitch = NEED_FOR_SWITCH;
 
 int counter = 0;
@@ -185,7 +185,7 @@ void tick() {
 
     if (isTurnedOn && redDone && greenDone && blueDone) {
         if (currentMode == MODE_BLINK) {
-            if (currentValueRed == 0) {
+            if (currentValueRed == 0 && currentValueGreen == 0 && currentValueBlue == 0) {
                 applyColors();
             } else {
                 targetValueRed = 0;
